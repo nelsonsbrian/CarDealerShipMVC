@@ -4,15 +4,15 @@ namespace CarList.Models
 {
   public class Car
   {
-    private int Id;
-    private static List<Inventory> _inventory = new List<Inventory> {};
+    private string Id;
+    private static List<Car> _inventory = new List<Car> {};
 
-    public Car(int id)
+    public Car(string id)
     {
       Id = id;
     }
 
-    public Car(int id, string make, string model, string note, int price, int mileage)
+    public Car(string id, string make, string model, string note, string price, string mileage)
     {
       Id = id;
       Make = make;
@@ -22,13 +22,14 @@ namespace CarList.Models
       Note = note;
     }
 
+
     public string Make { get; set; }
     public string Model { get; set; }
     public string Note { get; set; }
-    public int Price { get; set; }
-    public int Mileage { get; set; }
+    public string Price { get; set; }
+    public string Mileage { get; set; }
 
-    public static List<Inventory> GetAll()
+    public static List<Car> GetAll()
     {
       return _inventory;
     }
